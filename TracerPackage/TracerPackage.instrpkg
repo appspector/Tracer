@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<package>
+    <id>AS.Tracer</id>
+    <version>1.0</version>
+    <title>Tracer</title>
+    <owner>
+        <name>Igor</name>
+    </owner>
+    
+    
+    <os-signpost-interval-schema>
+        <id>trace-schema</id>
+        <title>Traces</title>
+        
+        <subsystem>"com.tracer"</subsystem>
+        <category>"Behavior"</category>
+        <name>"tracing"</name>
+        
+        <start-pattern>
+            <message>"span-start:" ?span-name-started ",scope-name:" ?scope-name</message>
+        </start-pattern>
+        <end-pattern>
+            <message>"span-stop:" ?span-name-stopped ",span-success:" ?span-success</message>
+        </end-pattern>
+        
+        <start-column>
+            <mnemonic>span-start</mnemonic>
+            <title>Started at</title>
+            <type>time-of-day</type>
+        </start-column>
+        
+        <duration-column>
+            <mnemonic>span-duration</mnemonic>
+            <title>Duration</title>
+            <type>duration</type>
+        </duration-column>
+
+        <column>
+            <mnemonic>span-success</mnemonic>
+            <title>Success</title>
+            <type>uint32</type>
+            <expression>?span-success</expression>
+        </column>
+        
+        <column>
+            <mnemonic>scope-name</mnemonic>
+            <title>Scope name</title>
+            <type>string</type>
+            <expression>?scope-name</expression>
+        </column>
+        
+        <column>
+            <mnemonic>span-name</mnemonic>
+            <title>Span name</title>
+            <type>string</type>
+            <expression>?span-name-started</expression>
+        </column>
+        
+        <column>
+            <mnemonic>status</mnemonic>
+            <title>Status</title>
+            <type>event-concept</type>
+            <expression>(if (not ?span-name-stopped) then "In progress" else (if (= ?span-success 1) then "Finished" else "Failed"))</expression>
+        </column>
+        
+        <column>
+            <mnemonic>status-color</mnemonic>
+            <title>Success color</title>
+            <type>event-concept</type>
+            <expression>(if (not ?span-name-stopped) then "Blue" else (if (= ?span-success 1) then "Green" else "Red"))</expression>
+        </column>
+        
+        <open-interval-template>
+            
+            <mnemonic>scope-name</mnemonic>
+            <expression>?scope-name</expression>
+            
+            <mnemonic>span-name</mnemonic>
+            <expression>?span-name-started</expression>
+            
+        </open-interval-template>
+        
+    </os-signpost-interval-schema>
+    
+    <instrument>
+        <id>com.tracer</id>
+        <title>Tracer</title>
+        <category>Behavior</category>
+        <purpose>Open tracing like visualisation of any processes</purpose>
+        <icon>Generic</icon>
+        
+        <create-table>
+            <id>traces-table</id>
+            <schema-ref>trace-schema</schema-ref>
+        </create-table>
+        
+        <graph>
+            <title>Trace</title>
+            <lane>
+                <title>Trace</title>
+                <table-ref>traces-table</table-ref>
+                <plot-template>
+                    <instance-by>scope-name</instance-by>
+                    <label-format>%s</label-format>
+                    <value-from>scope-name</value-from>
+                    <color-from>status-color</color-from>
+                    <label-from>span-name</label-from>
+                </plot-template>
+            </lane>
+        </graph>
+        
+        <list>
+            <title>Spans</title>
+            <table-ref>traces-table</table-ref>
+            <column>span-name</column>
+            <column>span-start</column>
+            <column>span-duration</column>
+            <column>scope-name</column>
+        </list>
+        
+    </instrument>
+
+</package>

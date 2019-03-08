@@ -13,6 +13,11 @@
 		0EA9E4DA2231544800E8810D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EA9E4D92231544800E8810D /* Assets.xcassets */; };
 		0EA9E4DD2231544800E8810D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA9E4DB2231544800E8810D /* LaunchScreen.storyboard */; };
 		0EA9E4E02231544800E8810D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA9E4DF2231544800E8810D /* main.m */; };
+		0EA9E4EB2231554800E8810D /* TracerPackage.instrpkg in Sources */ = {isa = PBXBuildFile; fileRef = 0EA9E4EA2231554800E8810D /* TracerPackage.instrpkg */; };
+		0EA9E4F6223155AD00E8810D /* ASScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA9E4F0223155AD00E8810D /* ASScope.m */; };
+		0EA9E4F7223155AD00E8810D /* ASSpan.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA9E4F4223155AD00E8810D /* ASSpan.m */; };
+		0EA9E4F8223155AD00E8810D /* ASTracer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA9E4F5223155AD00E8810D /* ASTracer.m */; };
+		0EA9E4FE22315DB000E8810D /* ASSampleOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA9E4FD22315DB000E8810D /* ASSampleOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,16 @@
 		0EA9E4DC2231544800E8810D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EA9E4DE2231544800E8810D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EA9E4DF2231544800E8810D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0EA9E4E82231554800E8810D /* TracerPackage.instrdst */ = {isa = PBXFileReference; explicitFileType = com.apple.instruments.instrdst; includeInIndex = 0; path = TracerPackage.instrdst; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EA9E4EA2231554800E8810D /* TracerPackage.instrpkg */ = {isa = PBXFileReference; lastKnownFileType = "com.apple.instruments.package-definition"; path = TracerPackage.instrpkg; sourceTree = "<group>"; };
+		0EA9E4F0223155AD00E8810D /* ASScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScope.m; sourceTree = "<group>"; };
+		0EA9E4F1223155AD00E8810D /* ASSpan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSpan.h; sourceTree = "<group>"; };
+		0EA9E4F2223155AD00E8810D /* ASTracer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTracer.h; sourceTree = "<group>"; };
+		0EA9E4F3223155AD00E8810D /* ASScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASScope.h; sourceTree = "<group>"; };
+		0EA9E4F4223155AD00E8810D /* ASSpan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSpan.m; sourceTree = "<group>"; };
+		0EA9E4F5223155AD00E8810D /* ASTracer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTracer.m; sourceTree = "<group>"; };
+		0EA9E4FC22315DB000E8810D /* ASSampleOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASSampleOperation.h; sourceTree = "<group>"; };
+		0EA9E4FD22315DB000E8810D /* ASSampleOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASSampleOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				0EA9E4CF2231544600E8810D /* Tracer */,
+				0EA9E4E92231554800E8810D /* TracerPackage */,
 				0EA9E4CE2231544600E8810D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				0EA9E4CD2231544600E8810D /* Tracer.app */,
+				0EA9E4E82231554800E8810D /* TracerPackage.instrdst */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,17 +75,65 @@
 		0EA9E4CF2231544600E8810D /* Tracer */ = {
 			isa = PBXGroup;
 			children = (
+				0EA9E4DE2231544800E8810D /* Info.plist */,
+				0EA9E4DF2231544800E8810D /* main.m */,
+				0EA9E4F9223155D400E8810D /* Sampe App */,
+				0EA9E4EF223155AD00E8810D /* TracingModule */,
+			);
+			path = Tracer;
+			sourceTree = "<group>";
+		};
+		0EA9E4E92231554800E8810D /* TracerPackage */ = {
+			isa = PBXGroup;
+			children = (
+				0EA9E4EA2231554800E8810D /* TracerPackage.instrpkg */,
+			);
+			path = TracerPackage;
+			sourceTree = "<group>";
+		};
+		0EA9E4EF223155AD00E8810D /* TracingModule */ = {
+			isa = PBXGroup;
+			children = (
+				0EA9E4F2223155AD00E8810D /* ASTracer.h */,
+				0EA9E4F5223155AD00E8810D /* ASTracer.m */,
+				0EA9E4F3223155AD00E8810D /* ASScope.h */,
+				0EA9E4F0223155AD00E8810D /* ASScope.m */,
+				0EA9E4F1223155AD00E8810D /* ASSpan.h */,
+				0EA9E4F4223155AD00E8810D /* ASSpan.m */,
+			);
+			path = TracingModule;
+			sourceTree = "<group>";
+		};
+		0EA9E4F9223155D400E8810D /* Sampe App */ = {
+			isa = PBXGroup;
+			children = (
+				0EA9E4FA223155F300E8810D /* Resources */,
+				0EA9E4FB223155FF00E8810D /* View */,
 				0EA9E4D02231544600E8810D /* AppDelegate.h */,
 				0EA9E4D12231544700E8810D /* AppDelegate.m */,
 				0EA9E4D32231544700E8810D /* ViewController.h */,
 				0EA9E4D42231544700E8810D /* ViewController.m */,
-				0EA9E4D62231544700E8810D /* Main.storyboard */,
-				0EA9E4D92231544800E8810D /* Assets.xcassets */,
-				0EA9E4DB2231544800E8810D /* LaunchScreen.storyboard */,
-				0EA9E4DE2231544800E8810D /* Info.plist */,
-				0EA9E4DF2231544800E8810D /* main.m */,
+				0EA9E4FC22315DB000E8810D /* ASSampleOperation.h */,
+				0EA9E4FD22315DB000E8810D /* ASSampleOperation.m */,
 			);
-			path = Tracer;
+			path = "Sampe App";
+			sourceTree = "<group>";
+		};
+		0EA9E4FA223155F300E8810D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0EA9E4D92231544800E8810D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0EA9E4FB223155FF00E8810D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0EA9E4D62231544700E8810D /* Main.storyboard */,
+				0EA9E4DB2231544800E8810D /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +156,21 @@
 			productReference = 0EA9E4CD2231544600E8810D /* Tracer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0EA9E4E72231554800E8810D /* TracerPackage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EA9E4EC2231554800E8810D /* Build configuration list for PBXNativeTarget "TracerPackage" */;
+			buildPhases = (
+				0EA9E4E62231554800E8810D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TracerPackage;
+			productName = TracerPackage;
+			productReference = 0EA9E4E82231554800E8810D /* TracerPackage.instrdst */;
+			productType = "com.apple.product-type.instruments-package";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -101,6 +181,9 @@
 				ORGANIZATIONNAME = AppSpector;
 				TargetAttributes = {
 					0EA9E4CC2231544600E8810D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					0EA9E4E72231554800E8810D = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -119,6 +202,7 @@
 			projectRoot = "";
 			targets = (
 				0EA9E4CC2231544600E8810D /* Tracer */,
+				0EA9E4E72231554800E8810D /* TracerPackage */,
 			);
 		};
 /* End PBXProject section */
@@ -141,9 +225,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EA9E4FE22315DB000E8810D /* ASSampleOperation.m in Sources */,
 				0EA9E4D52231544700E8810D /* ViewController.m in Sources */,
 				0EA9E4E02231544800E8810D /* main.m in Sources */,
+				0EA9E4F8223155AD00E8810D /* ASTracer.m in Sources */,
+				0EA9E4F6223155AD00E8810D /* ASScope.m in Sources */,
+				0EA9E4F7223155AD00E8810D /* ASSpan.m in Sources */,
 				0EA9E4D22231544700E8810D /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EA9E4E62231554800E8810D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EA9E4EB2231554800E8810D /* TracerPackage.instrpkg in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +411,30 @@
 			};
 			name = Release;
 		};
+		0EA9E4ED2231554800E8810D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AM5334753U;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Instruments/Packages";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "";
+			};
+			name = Debug;
+		};
+		0EA9E4EE2231554800E8810D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AM5334753U;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Instruments/Packages";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -332,6 +452,15 @@
 			buildConfigurations = (
 				0EA9E4E42231544800E8810D /* Debug */,
 				0EA9E4E52231544800E8810D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0EA9E4EC2231554800E8810D /* Build configuration list for PBXNativeTarget "TracerPackage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0EA9E4ED2231554800E8810D /* Debug */,
+				0EA9E4EE2231554800E8810D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
