@@ -6,8 +6,8 @@ This repo contains example project and custom Xcode Instruments package for open
 To install custom package you need Xcode 10.
 
 ## Installation
-To add the package to your Instruments you have to download it from the Releases, extract, doubleclick and install.
-After that it will appear in the list of instruments. Unfortunately there is no way to install andupdate it automatically.
+To add the package to your Instruments you have to download it from the [Releases](https://github.com/appspector/Tracer/releases/tag/1.0.1), extract, doubleclick and install.
+After that it will appear in the list of instruments. Unfortunately there is no way to install and update it automatically.
 
 To use the package you need to issue appropriate os_signpost calls, which is more convinient using wrapper from TracingModule directory in sample project. Wrapper could be installed via CocoaPods:
 
