@@ -36,7 +36,7 @@ Also you can use tracer to atomatically trace `NSOperation`s using `startTracing
 # Sample app
 If you want to play with package yo ucan use Tracer app in the package Xcode project. It allows to create `NSOperationQueue`s and operations inside them and automatically starts tracing them. Install package then start Tracer app, run Instruments, choose blank template add Tracer package to it and start recording:
 
-
+![](https://github.com/appspector/Tracer/blob/master/image-sample.png)
 
 # About Us
 
