@@ -33,6 +33,11 @@ Also you can use tracer to atomatically trace `NSOperation`s using `startTracing
 
 ![](https://github.com/appspector/Tracer/blob/master/image-operations.png)
 
+# Sample app
+If you want to play with package yo ucan use Tracer app in the package Xcode project. It allows to create `NSOperationQueue`s and operations inside them and automatically starts tracing them. Install package then start Tracer app, run Instruments, choose blank template add Tracer package to it and start recording:
+
+
+
 # About Us
 
 Looking for better debugging instrument? Try [AppSpector](https://appspector.com). With AppSpector you can remotely debug your app running in the same room or on another continent. You can measure app performance, view CoreData and SQLite content, logs, network requests and many more in realtime. This is the instrument that you've been looking for.
