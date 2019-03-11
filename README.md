@@ -16,6 +16,7 @@ To use the package you need to issue appropriate os_signpost calls, which is mor
 or manually by just moving TracingModule directory to your project and importing `Tracer.h`.
 
 ## Usage
+#### Manual
 There are two ways you can play with tracer. First is manually by using the following API:
 ```
 - (ASScope *)addScope:(NSString *)scopeName;
@@ -27,6 +28,7 @@ Scopes and spans are concepts describing activites you want to trace, i.e. if yo
 
 ![](https://github.com/appspector/Tracer/blob/master/image-manual.png)
 
+#### Tracing NSOperations
 Also you can use tracer to atomatically trace `NSOperation`s using `startTracingOperations` call. This will install hooks and KVO observers to track operations lifecycle.
 
 ![](https://github.com/appspector/Tracer/blob/master/image-operations.png)
