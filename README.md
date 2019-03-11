@@ -11,7 +11,7 @@ After that it will appear in the list of instruments. Unfortunately there is no 
 
 To use the package you need to issue appropriate os_signpost calls, which is more convinient using wrapper from TracingModule directory in sample project. Wrapper could be installed via CocoaPods:
 
-`pod 'Tracer', '~> 1.0.0'`
+`pod 'Tracer', '~> 1.0.1'`
 
 or manually by just moving TracingModule directory to your project and importing `Tracer.h`.
 
