@@ -18,7 +18,7 @@ or manually by just moving TracingModule directory to your project and importing
 ## Usage
 #### Manual
 There are two ways you can play with tracer. First is manually by using the following API:
-```
+```objective-c
 - (ASScope *)addScope:(NSString *)scopeName;
 - (void)removeScope:(NSString *)scopeName;
 - (void)startSpan:(NSString *)spanName inScope:(NSString *)scopeName;
