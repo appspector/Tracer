@@ -31,7 +31,11 @@ Scopes and spans are concepts describing activites you want to trace, i.e. if yo
 ![](https://github.com/appspector/Tracer/blob/master/image-manual.png)
 
 #### Tracing NSOperations
-Also you can use tracer to atomatically trace `NSOperation`s using `startTracingOperations` call. This will install hooks and KVO observers to track operations lifecycle.
+Also you can use tracer to atomatically trace `NSOperation`s using `startTracingOperations` call:
+
+`[[ASTracer tracer] startTracingOperations];`
+
+This will install hooks and KVO observers to track operations lifecycle.
 
 ![](https://github.com/appspector/Tracer/blob/master/image-operations.png)
 
