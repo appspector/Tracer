@@ -13,7 +13,9 @@ To use the package you need to issue appropriate os_signpost calls, which is mor
 
 `pod 'Tracer', '~> 1.0.1'`
 
-or manually by just moving TracingModule directory to your project and importing `Tracer.h`.
+or manually by just moving TracingModule directory to your project and importing Tracer:
+
+`#import <Tracer/ASTracer.h>`
 
 ## Usage
 #### Manual
