@@ -1,5 +1,5 @@
 # Tracer
-This repo contains example project and custom Xcode Instruments package for opentracing-like inspection of any activities in your iOS/macOS app.
+This repo contains example project and custom Xcode Instruments package for opentracing-like inspection of any activities in your iOS/macOS app. See detailed description here: https://appspector.com/blog/instruments-part-2
 
 ## Requirements
 `os_signpost` API is available starting from iOS 12 and macOS 10.14.
