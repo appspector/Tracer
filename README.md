@@ -55,6 +55,8 @@ https://medium.com/appspector/building-custom-instruments-package-9d84fd9339b6
   https://help.apple.com/instruments/developer/mac/10.0/#/
 - CLIPS reference<br>
   http://sequoia.ict.pwr.wroc.pl/~witold/ai/CLIPS_tutorial/
+- Article on tracing mechanisms by CossackLabs
+  https://www.cossacklabs.com/blog/how-to-implement-distributed-tracing.html
 
 
 # About Us
